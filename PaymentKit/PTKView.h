@@ -40,4 +40,9 @@
 @property (nonatomic, weak) id <PTKViewDelegate> delegate;
 @property (readonly) PTKCard *card;
 
+- (void)stateMeta;
+- (void)stateCardCVC;
+- (void)reset;
+- (BOOL)becomeFirstResponder;
+
 @end

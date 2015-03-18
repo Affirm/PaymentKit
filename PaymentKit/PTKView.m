@@ -231,8 +231,21 @@ static NSString *const kPTKOldLocalizedStringsTableName = @"STPaymentLocalizable
                              [self.cardCVCField removeFromSuperview];
                          }];
     }
-    
     [self.cardNumberField becomeFirstResponder];
+}
+
+- (void)reset {
+    self.opaqueOverGradientView.alpha = 0.0;
+    self.cardExpiryField.text = @"";
+    self.cardCVCField.text = @"";
+    self.cardNumberField.textColor = DarkGreyColor;
+    [self.cardExpiryField removeFromSuperview];
+    [self.cardCVCField removeFromSuperview];
+    self.cardNumberField.frame = CGRectMake(12,
+                                            self.cardNumberField.frame.origin.y,
+                                            self.cardNumberField.frame.size.width,
+                                            self.cardNumberField.frame.size.height);
+//    [self.cardNumberField becomeFirstResponder];
 }
 
 - (void)stateMeta
